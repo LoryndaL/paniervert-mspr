@@ -220,5 +220,8 @@ __marimo__/
 .streamlit/secrets.toml
 
 # Large local data files
-data/raw/
-data/processed/
+# Keep the folders, but ignore their generated data contents
+/data/raw/*
+!/data/raw/.gitkeep
+/data/processed/*
+!/data/processed/.gitkeep
