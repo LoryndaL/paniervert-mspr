@@ -1,39 +1,44 @@
+from ingestion.instacart import main as instacart
+from ingestion.openfoodfacts import main as openfoodfacts
+from ingestion.rappelconso import main as rappelconso
+from ingestion.scraping import main as scraping
+
+from preprocessing.clean_data import main as clean_data
+from preprocessing.merge_data import main as merge_data
+
+from features.build_features import main as build_features
+
+from mining.clustering import main as clustering
+from mining.apriori import main as apriori
+from mining.classification import main as classification
+
+
 def main():
+    print("1. Collecte")
+    instacart()
+    openfoodfacts()
+    rappelconso()
+    scraping()
 
-    print("=== ETAPE 1 : COLLECTE ===")
+    print("2. Nettoyage")
+    clean_data()
 
-    # Instacart
-    # OpenFoodFacts
-    # RappelConso
-    # Agriculture
+    print("3. Fusion")
+    merge_data()
 
-    print("=== ETAPE 2 : NETTOYAGE ===")
+    print("4. Feature Engineering")
+    build_features()
 
-    # clean_data.py
+    print("5. Clustering")
+    clustering()
 
-    print("=== ETAPE 3 : FUSION ===")
+    print("6. Apriori")
+    apriori()
 
-    # merge_data.py
+    print("7. Classification")
+    classification()
 
-    print("=== ETAPE 4 : FEATURE ENGINEERING ===")
-
-    # build_features.py
-
-    print("=== ETAPE 5 : CLUSTERING ===")
-
-    # clustering.py
-
-    print("=== ETAPE 6 : APRIORI ===")
-
-    # apriori.py
-
-    print("=== ETAPE 7 : CLASSIFICATION ===")
-
-    # classification.py
-
-    print("=== ETAPE 8 : DASHBOARD ===")
-
-    # streamlit_app.py
+    print("Pipeline terminée ✅")
 
 
 if __name__ == "__main__":

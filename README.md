@@ -211,6 +211,62 @@ Correspondance des catalogues à partir :
 
 ---
 
+## Docker
+
+### Prérequis
+
+- Docker Desktop installé
+- Docker Compose disponible
+
+### Construire les images
+
+```bash
+docker compose build
+```
+
+### Lancer tout le projet
+
+```bash
+docker compose up
+```
+
+Cette commande lance :
+
+- le pipeline de nettoyage dans le service `paniervert` ;
+- le dashboard Streamlit dans le service `streamlit`.
+
+Le dashboard est accessible sur :
+
+```text
+http://localhost:8501
+```
+
+### Lancer uniquement les commandes utiles
+
+Pipeline :
+
+```bash
+docker compose run --rm paniervert
+```
+
+Dashboard seul :
+
+```bash
+docker compose up streamlit
+```
+
+Arrêter les conteneurs :
+
+```bash
+docker compose down
+```
+
+### Données locales
+
+Le dossier local `./data` est monté dans `/app/data` dans les conteneurs. Les données brutes et préparées restent disponibles hors du conteneur et ne doivent pas être versionnées dans Git.
+
+---
+
 ## Équipe
 
 Projet réalisé dans le cadre de la MSPR Data Mining.

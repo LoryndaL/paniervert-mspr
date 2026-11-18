@@ -1,0 +1,16 @@
+services:
+  paniervert:
+    build: .
+    container_name: paniervert-mspr
+    volumes:
+      - ./data:/app/data
+    command: python src/pipeline.py
+
+  streamlit:
+    build: .
+    container_name: paniervert-streamlit
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "8501:8501"
+    command: streamlit run src/dashboard.py --server.address=0.0.0.0 --server.port=8501
