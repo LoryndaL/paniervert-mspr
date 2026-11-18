@@ -1,53 +1,63 @@
-import os
 from pathlib import Path
 
-import pandas as pd
 import requests
 
-try:
-    import pyarrow  # noqa: F401
-except ImportError as exc:
-    raise SystemExit(
-        "Merci d'installer 'pyarrow' pour écrire le fichier Parquet: pip install pyarrow"
-    ) from exc
-
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
 OUTPUT_DIR = PROJECT_ROOT / "data" / "raw"
-OUTPUT_PATH = OUTPUT_DIR / "rappelconso.parquet"
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-API_URL = "https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/rappelconso-v2-gtin-espaces/records"
-HEADERS = {"User-Agent": "Mozilla/5.0"}
+OUTPUT_FILE = OUTPUT_DIR / "rappelconso.parquet"
+
+URL = (
+    "https://data.economie.gouv.fr/api/explore/v2.1/"
+    "catalog/datasets/rappelconso-v2-gtin-espaces/"
+    "exports/parquet/?lang=fr&timezone=Europe%2FParis"
+)
 
 
-def fetch_records(limit: int = 100, offset: int = 0):
-    params = {"limit": limit, "offset": offset}
-    response = requests.get(API_URL, params=params, headers=HEADERS, timeout=60)
+def download_dataset():
+
+    print("Téléchargement du dataset RappelConso...")
+
+    response = requests.get(
+        URL,
+        stream=True,
+        timeout=600
+    )
+
     response.raise_for_status()
-    payload = response.json()
-    return payload.get("results", [])
 
+    total_size = int(
+        response.headers.get("content-length", 0)
+    )
 
-def main():
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    downloaded = 0
 
-    records = []
-    for offset in range(0, 1000, 100):
-        batch = fetch_records(limit=100, offset=offset)
-        if not batch:
-            break
-        records.extend(batch)
-        print(f"Récupéré: {len(records)} enregistrements")
+    with open(OUTPUT_FILE, "wb") as file:
 
-    if not records:
-        print("Aucune donnée récupérée.")
-        return
+        for chunk in response.iter_content(
+            chunk_size=1024 * 1024
+        ):
 
-    df = pd.DataFrame(records)
-    df.to_parquet(OUTPUT_PATH, index=False)
+            if chunk:
 
-    print(f"Fichier enregistré : {OUTPUT_PATH}")
-    print(df.head())
+                file.write(chunk)
+
+                downloaded += len(chunk)
+
+                if total_size:
+
+                    progress = downloaded / total_size * 100
+
+                    print(
+                        f"\rProgression : {progress:.1f}%",
+                        end=""
+                    )
+
+    print("\n✅ Téléchargement terminé")
+    print(f"Fichier enregistré : {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":
-    main()
+    download_dataset()
