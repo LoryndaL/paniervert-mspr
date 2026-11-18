@@ -5,7 +5,7 @@ def main():
     # Instacart
     # OpenFoodFacts
     # RappelConso
-    # Greenweez
+    # Agriculture
 
     print("=== ETAPE 2 : NETTOYAGE ===")
 
