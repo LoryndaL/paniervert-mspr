@@ -73,7 +73,7 @@ def select_features(df: pd.DataFrame) -> list[str]:
     return [col for col in numeric_cols if col not in EXCLUDED_COLS]
 
 
-def prepare_matrix(df: pd.DataFrame, features: list[str]) -> np.ndarray:
+def prepare_matrix(df: pd.DataFrame, features: list[str]) -> tuple[np.ndarray, StandardScaler]:
     """Applique log1p sur les variables asymétriques puis StandardScaler."""
     raw_num = df[features].apply(pd.to_numeric, errors="coerce").replace([np.inf, -np.inf], np.nan)
     raw_num = raw_num.fillna(raw_num.median(numeric_only=True)).fillna(0.0)
@@ -86,7 +86,8 @@ def prepare_matrix(df: pd.DataFrame, features: list[str]) -> np.ndarray:
             )
 
     scaler = StandardScaler()
-    return scaler.fit_transform(transformed)
+    X_scaled = scaler.fit_transform(transformed)
+    return X_scaled, scaler
 
 
 def evaluate_k_range(X_scaled: np.ndarray, k_min: int = 2, k_max: int = 10) -> tuple[pd.DataFrame, int]:
@@ -449,7 +450,7 @@ def main(forced_k: int | None = 4) -> Path | None:
         return None
 
     logging.info("Variables retenues pour le clustering (sans ID) : %s", features)
-    X_scaled = prepare_matrix(df, features)
+    X_scaled, scaler = prepare_matrix(df, features)
 
     print("\n=== ÉVALUATION k = 2 À 10 (COUDE + SILHOUETTE + DAVIES-BOULDIN) ===")
     metrics_df, best_k = evaluate_k_range(X_scaled, k_min=2, k_max=10)
@@ -462,6 +463,20 @@ def main(forced_k: int | None = 4) -> Path | None:
 
     km_final = KMeans(n_clusters=chosen_k, n_init=10, random_state=42)
     df["segment"] = km_final.fit_predict(X_scaled)
+
+    centers_scaled = pd.DataFrame(km_final.cluster_centers_, columns=features)
+    centers_original = pd.DataFrame(
+        scaler.inverse_transform(centers_scaled.to_numpy()),
+        columns=features,
+    )
+    for col in features:
+        if col in SKEWED_FEATURES:
+            centers_original[col] = np.expm1(centers_original[col])
+
+    centers_original.index.name = "segment"
+    centers_output = MODELS_DIR / "cluster_centers.csv"
+    centers_original.to_csv(centers_output)
+    logging.info("Centres des clusters enregistrés : %s", centers_output)
 
     pca_1, pca_2, pca_var_ratio = compute_pca_2d(X_scaled)
     df["pca_1"] = pca_1
