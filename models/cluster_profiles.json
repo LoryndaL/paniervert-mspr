@@ -1,0 +1,252 @@
+{
+  "best_silhouette_k": 2,
+  "chosen_k": 3,
+  "total_clients": 206209,
+  "features": [
+    "total_orders",
+    "avg_basket_size",
+    "days_since_prior_order_mean",
+    "reorder_rate",
+    "organic_ratio"
+  ],
+  "pca_explained_variance_ratio": [
+    0.4408,
+    0.2216
+  ],
+  "global_means": {
+    "total_orders": 15.5904,
+    "avg_basket_size": 9.9516,
+    "days_since_prior_order_mean": 15.4697,
+    "reorder_rate": 0.4322,
+    "organic_ratio": 0.2722
+  },
+  "k_evaluation": [
+    {
+      "k": 2,
+      "inertia": 721567.81,
+      "silhouette": 0.2723,
+      "davies_bouldin": 1.4151
+    },
+    {
+      "k": 3,
+      "inertia": 617384.35,
+      "silhouette": 0.2133,
+      "davies_bouldin": 1.5806
+    },
+    {
+      "k": 4,
+      "inertia": 552301.72,
+      "silhouette": 0.1984,
+      "davies_bouldin": 1.5216
+    },
+    {
+      "k": 5,
+      "inertia": 501258.84,
+      "silhouette": 0.1862,
+      "davies_bouldin": 1.5226
+    },
+    {
+      "k": 6,
+      "inertia": 459567.16,
+      "silhouette": 0.198,
+      "davies_bouldin": 1.3276
+    },
+    {
+      "k": 7,
+      "inertia": 422845.71,
+      "silhouette": 0.1924,
+      "davies_bouldin": 1.3393
+    },
+    {
+      "k": 8,
+      "inertia": 395428.32,
+      "silhouette": 0.1892,
+      "davies_bouldin": 1.3146
+    },
+    {
+      "k": 9,
+      "inertia": 373351.71,
+      "silhouette": 0.191,
+      "davies_bouldin": 1.3238
+    },
+    {
+      "k": 10,
+      "inertia": 355279.42,
+      "silhouette": 0.181,
+      "davies_bouldin": 1.3468
+    }
+  ],
+  "comparison_k_2_4_5": [
+    {
+      "k": 2,
+      "inertia": 721567.81,
+      "silhouette": 0.2723,
+      "davies_bouldin": 1.4151,
+      "shares_pct": {
+        "0": 40.09,
+        "1": 59.91
+      },
+      "segment_means": {
+        "0": {
+          "total_orders": 28.814,
+          "avg_basket_size": 10.661,
+          "days_since_prior_order_mean": 10.3,
+          "reorder_rate": 0.62,
+          "organic_ratio": 0.321
+        },
+        "1": {
+          "total_orders": 6.74,
+          "avg_basket_size": 9.477,
+          "days_since_prior_order_mean": 18.929,
+          "reorder_rate": 0.307,
+          "organic_ratio": 0.24
+        }
+      }
+    },
+    {
+      "k": 4,
+      "inertia": 552301.72,
+      "silhouette": 0.1984,
+      "davies_bouldin": 1.5216,
+      "shares_pct": {
+        "0": 27.72,
+        "1": 23.77,
+        "2": 27.52,
+        "3": 21.0
+      },
+      "segment_means": {
+        "0": {
+          "total_orders": 8.346,
+          "avg_basket_size": 12.383,
+          "days_since_prior_order_mean": 17.277,
+          "reorder_rate": 0.381,
+          "organic_ratio": 0.45
+        },
+        "1": {
+          "total_orders": 15.167,
+          "avg_basket_size": 7.4,
+          "days_since_prior_order_mean": 13.613,
+          "reorder_rate": 0.52,
+          "organic_ratio": 0.125
+        },
+        "2": {
+          "total_orders": 5.226,
+          "avg_basket_size": 8.54,
+          "days_since_prior_order_mean": 20.644,
+          "reorder_rate": 0.222,
+          "organic_ratio": 0.141
+        },
+        "3": {
+          "total_orders": 39.219,
+          "avg_basket_size": 11.479,
+          "days_since_prior_order_mean": 8.402,
+          "reorder_rate": 0.676,
+          "organic_ratio": 0.375
+        }
+      }
+    },
+    {
+      "k": 5,
+      "inertia": 501258.84,
+      "silhouette": 0.1862,
+      "davies_bouldin": 1.5226,
+      "shares_pct": {
+        "0": 24.59,
+        "1": 17.04,
+        "2": 16.21,
+        "3": 21.64,
+        "4": 20.52
+      },
+      "segment_means": {
+        "0": {
+          "total_orders": 8.87,
+          "avg_basket_size": 11.882,
+          "days_since_prior_order_mean": 16.747,
+          "reorder_rate": 0.392,
+          "organic_ratio": 0.47
+        },
+        "1": {
+          "total_orders": 41.394,
+          "avg_basket_size": 11.601,
+          "days_since_prior_order_mean": 8.159,
+          "reorder_rate": 0.686,
+          "organic_ratio": 0.416
+        },
+        "2": {
+          "total_orders": 6.429,
+          "avg_basket_size": 3.776,
+          "days_since_prior_order_mean": 20.007,
+          "reorder_rate": 0.305,
+          "organic_ratio": 0.172
+        },
+        "3": {
+          "total_orders": 5.684,
+          "avg_basket_size": 12.439,
+          "days_since_prior_order_mean": 19.908,
+          "reorder_rate": 0.253,
+          "organic_ratio": 0.142
+        },
+        "4": {
+          "total_orders": 19.899,
+          "avg_basket_size": 8.525,
+          "days_since_prior_order_mean": 11.745,
+          "reorder_rate": 0.559,
+          "organic_ratio": 0.132
+        }
+      }
+    }
+  ],
+  "dbscan_comparison": {
+    "sample_size": 20000,
+    "clusters_found": 1,
+    "noise_pct": 0.21,
+    "silhouette_non_noise": null
+  },
+  "segments": [
+    {
+      "segment": 0,
+      "nom_metier": "Ambassadeurs Bio & Grands Paniers (S0)",
+      "description": "Clients très fidèles commandant souvent de gros paniers fortement orientés bio.",
+      "action_recommandee": "Programme VIP bio, avantages fidélité et accès prioritaire aux nouveautés responsables.",
+      "nb_clients": 66542,
+      "part_pct": 32.27,
+      "means": {
+        "total_orders": 32.6012,
+        "avg_basket_size": 10.471,
+        "days_since_prior_order_mean": 9.4578,
+        "reorder_rate": 0.6437,
+        "organic_ratio": 0.3065
+      }
+    },
+    {
+      "segment": 1,
+      "nom_metier": "Petits Paniers Occasionnels (S1)",
+      "description": "Clients à faible fréquence et petits paniers nécessitant de la réactivation.",
+      "action_recommandee": "Campagne de réactivation promotionnelle et mise en avant des essentiels à petit prix.",
+      "nb_clients": 76768,
+      "part_pct": 37.23,
+      "means": {
+        "total_orders": 7.3386,
+        "avg_basket_size": 7.7693,
+        "days_since_prior_order_mean": 18.5552,
+        "reorder_rate": 0.3128,
+        "organic_ratio": 0.1085
+      }
+    },
+    {
+      "segment": 2,
+      "nom_metier": "Découvreurs Bio Ponctuels (S2)",
+      "description": "Acheteurs sensibles au bio mais encore peu fréquents sur la plateforme.",
+      "action_recommandee": "Bon de réduction sur la prochaine commande bio et relance de réachat ciblée.",
+      "nb_clients": 62899,
+      "part_pct": 30.5,
+      "means": {
+        "total_orders": 7.6656,
+        "avg_basket_size": 12.0656,
+        "days_since_prior_order_mean": 18.0638,
+        "reorder_rate": 0.3544,
+        "organic_ratio": 0.4357
+      }
+    }
+  ]
+}
