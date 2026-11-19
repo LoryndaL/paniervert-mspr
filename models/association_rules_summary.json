@@ -1,0 +1,104 @@
+{
+  "engine": "mlxtend_fpgrowth",
+  "baskets_analyzed": 100358,
+  "top_n_products_kept": 1500,
+  "parameters": {
+    "min_support": 0.005,
+    "min_confidence": 0.2,
+    "min_lift": 1.2
+  },
+  "rules_count": 67,
+  "bio_related_rules_count": 48,
+  "top_10_recommendations": [
+    {
+      "rang": 1,
+      "regle": "Lime Sparkling Water -> Sparkling Water Grapefruit",
+      "type_action": "Offre groupée / bundle promotionnel",
+      "support_pct": 0.5,
+      "confiance_pct": 28.9,
+      "lift": 10.23,
+      "recommandation": "Offre groupée / bundle promotionnel : 0.5% des paniers associent 'Lime Sparkling Water' et 'Sparkling Water Grapefruit' (28.9% des acheteurs de 'Lime Sparkling Water' prennent 'Sparkling Water Grapefruit', lift 10.23x)."
+    },
+    {
+      "rang": 2,
+      "regle": "[BIO] Organic Cilantro -> Limes",
+      "type_action": "Vente croisée au passage panier",
+      "support_pct": 0.65,
+      "confiance_pct": 24.9,
+      "lift": 4.97,
+      "recommandation": "Vente croisée au passage panier : 0.65% des paniers associent '[BIO] Organic Cilantro' et 'Limes' (24.9% des acheteurs de '[BIO] Organic Cilantro' prennent 'Limes', lift 4.97x)."
+    },
+    {
+      "rang": 3,
+      "regle": "[BIO] Organic Garlic -> [BIO] Organic Yellow Onion",
+      "type_action": "Implantation / mise en avant en rayon",
+      "support_pct": 0.81,
+      "confiance_pct": 20.4,
+      "lift": 4.87,
+      "recommandation": "Implantation / mise en avant en rayon : 0.81% des paniers associent '[BIO] Organic Garlic' et '[BIO] Organic Yellow Onion' (20.4% des acheteurs de '[BIO] Organic Garlic' prennent '[BIO] Organic Yellow Onion', lift 4.87x)."
+    },
+    {
+      "rang": 4,
+      "regle": "Limes -> Large Lemon",
+      "type_action": "Offre groupée / bundle promotionnel",
+      "support_pct": 1.03,
+      "confiance_pct": 20.4,
+      "lift": 3.65,
+      "recommandation": "Offre groupée / bundle promotionnel : 1.03% des paniers associent 'Limes' et 'Large Lemon' (20.4% des acheteurs de 'Limes' prennent 'Large Lemon', lift 3.65x)."
+    },
+    {
+      "rang": 5,
+      "regle": "[BIO] Organic Lemon -> [BIO] Organic Hass Avocado",
+      "type_action": "Vente croisée au passage panier",
+      "support_pct": 0.83,
+      "confiance_pct": 24.9,
+      "lift": 3.15,
+      "recommandation": "Vente croisée au passage panier : 0.83% des paniers associent '[BIO] Organic Lemon' et '[BIO] Organic Hass Avocado' (24.9% des acheteurs de '[BIO] Organic Lemon' prennent '[BIO] Organic Hass Avocado', lift 3.15x)."
+    },
+    {
+      "rang": 6,
+      "regle": "[BIO] Bag of Organic Bananas + [BIO] Organic Strawberries -> [BIO] Organic Hass Avocado",
+      "type_action": "Implantation / mise en avant en rayon",
+      "support_pct": 0.55,
+      "confiance_pct": 24.0,
+      "lift": 3.03,
+      "recommandation": "Implantation / mise en avant en rayon : 0.55% des paniers associent '[BIO] Bag of Organic Bananas + [BIO] Organic Strawberries' et '[BIO] Organic Hass Avocado' (24.0% des acheteurs de '[BIO] Bag of Organic Bananas + [BIO] Organic Strawberries' prennent '[BIO] Organic Hass Avocado', lift 3.03x)."
+    },
+    {
+      "rang": 7,
+      "regle": "[BIO] Organic Cucumber -> [BIO] Organic Hass Avocado",
+      "type_action": "Offre groupée / bundle promotionnel",
+      "support_pct": 0.65,
+      "confiance_pct": 21.6,
+      "lift": 2.74,
+      "recommandation": "Offre groupée / bundle promotionnel : 0.65% des paniers associent '[BIO] Organic Cucumber' et '[BIO] Organic Hass Avocado' (21.6% des acheteurs de '[BIO] Organic Cucumber' prennent '[BIO] Organic Hass Avocado', lift 2.74x)."
+    },
+    {
+      "rang": 8,
+      "regle": "[BIO] Organic Hass Avocado + [BIO] Organic Strawberries -> [BIO] Bag of Organic Bananas",
+      "type_action": "Vente croisée au passage panier",
+      "support_pct": 0.55,
+      "confiance_pct": 35.7,
+      "lift": 2.53,
+      "recommandation": "Vente croisée au passage panier : 0.55% des paniers associent '[BIO] Organic Hass Avocado + [BIO] Organic Strawberries' et '[BIO] Bag of Organic Bananas' (35.7% des acheteurs de '[BIO] Organic Hass Avocado + [BIO] Organic Strawberries' prennent '[BIO] Bag of Organic Bananas', lift 2.53x)."
+    },
+    {
+      "rang": 9,
+      "regle": "[BIO] Organic Raspberries -> [BIO] Organic Strawberries",
+      "type_action": "Implantation / mise en avant en rayon",
+      "support_pct": 1.26,
+      "confiance_pct": 24.8,
+      "lift": 2.52,
+      "recommandation": "Implantation / mise en avant en rayon : 1.26% des paniers associent '[BIO] Organic Raspberries' et '[BIO] Organic Strawberries' (24.8% des acheteurs de '[BIO] Organic Raspberries' prennent '[BIO] Organic Strawberries', lift 2.52x)."
+    },
+    {
+      "rang": 10,
+      "regle": "[BIO] Organic Blueberries -> [BIO] Organic Strawberries",
+      "type_action": "Offre groupée / bundle promotionnel",
+      "support_pct": 0.89,
+      "confiance_pct": 24.5,
+      "lift": 2.49,
+      "recommandation": "Offre groupée / bundle promotionnel : 0.89% des paniers associent '[BIO] Organic Blueberries' et '[BIO] Organic Strawberries' (24.5% des acheteurs de '[BIO] Organic Blueberries' prennent '[BIO] Organic Strawberries', lift 2.49x)."
+    }
+  ]
+}

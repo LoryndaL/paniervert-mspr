@@ -1,0 +1,543 @@
+{
+  "baskets_analyzed": 48260,
+  "parameters": {
+    "min_support": 0.01,
+    "min_confidence": 0.25,
+    "min_lift": 1.1
+  },
+  "frequent_itemsets_count": 227,
+  "rules_count": 16,
+  "bio_related_rules_count": 10,
+  "top_itemsets": [
+    {
+      "items": [
+        "Banana"
+      ],
+      "length": 1,
+      "support": 0.2142,
+      "count": 10337
+    },
+    {
+      "items": [
+        "[BIO] Bag of Organic Bananas"
+      ],
+      "length": 1,
+      "support": 0.1794,
+      "count": 8660
+    },
+    {
+      "items": [
+        "[BIO] Organic Strawberries"
+      ],
+      "length": 1,
+      "support": 0.1292,
+      "count": 6234
+    },
+    {
+      "items": [
+        "[BIO] Organic Baby Spinach"
+      ],
+      "length": 1,
+      "support": 0.1174,
+      "count": 5668
+    },
+    {
+      "items": [
+        "[BIO] Organic Hass Avocado"
+      ],
+      "length": 1,
+      "support": 0.105,
+      "count": 5066
+    },
+    {
+      "items": [
+        "[BIO] Organic Avocado"
+      ],
+      "length": 1,
+      "support": 0.0868,
+      "count": 4188
+    },
+    {
+      "items": [
+        "Large Lemon"
+      ],
+      "length": 1,
+      "support": 0.0744,
+      "count": 3589
+    },
+    {
+      "items": [
+        "Limes"
+      ],
+      "length": 1,
+      "support": 0.068,
+      "count": 3284
+    },
+    {
+      "items": [
+        "[BIO] Organic Raspberries"
+      ],
+      "length": 1,
+      "support": 0.0673,
+      "count": 3250
+    },
+    {
+      "items": [
+        "Strawberries"
+      ],
+      "length": 1,
+      "support": 0.0667,
+      "count": 3217
+    },
+    {
+      "items": [
+        "[BIO] Organic Whole Milk"
+      ],
+      "length": 1,
+      "support": 0.0664,
+      "count": 3206
+    },
+    {
+      "items": [
+        "[BIO] Organic Yellow Onion"
+      ],
+      "length": 1,
+      "support": 0.0561,
+      "count": 2708
+    },
+    {
+      "items": [
+        "[BIO] Organic Garlic"
+      ],
+      "length": 1,
+      "support": 0.0547,
+      "count": 2642
+    },
+    {
+      "items": [
+        "[BIO] Organic Zucchini"
+      ],
+      "length": 1,
+      "support": 0.0514,
+      "count": 2479
+    },
+    {
+      "items": [
+        "[BIO] Organic Blueberries"
+      ],
+      "length": 1,
+      "support": 0.0487,
+      "count": 2349
+    },
+    {
+      "items": [
+        "Cucumber Kirby"
+      ],
+      "length": 1,
+      "support": 0.0482,
+      "count": 2326
+    },
+    {
+      "items": [
+        "[BIO] Organic Lemon"
+      ],
+      "length": 1,
+      "support": 0.0447,
+      "count": 2158
+    },
+    {
+      "items": [
+        "[BIO] Organic Fuji Apple"
+      ],
+      "length": 1,
+      "support": 0.0435,
+      "count": 2099
+    },
+    {
+      "items": [
+        "[BIO] Organic Grape Tomatoes"
+      ],
+      "length": 1,
+      "support": 0.0424,
+      "count": 2047
+    },
+    {
+      "items": [
+        "[BIO] Apple Honeycrisp Organic"
+      ],
+      "length": 1,
+      "support": 0.0417,
+      "count": 2014
+    },
+    {
+      "items": [
+        "[BIO] Organic Cucumber"
+      ],
+      "length": 1,
+      "support": 0.0408,
+      "count": 1967
+    },
+    {
+      "items": [
+        "Seedless Red Grapes"
+      ],
+      "length": 1,
+      "support": 0.0399,
+      "count": 1926
+    },
+    {
+      "items": [
+        "Honeycrisp Apple"
+      ],
+      "length": 1,
+      "support": 0.0398,
+      "count": 1920
+    },
+    {
+      "items": [
+        "Sparkling Water Grapefruit"
+      ],
+      "length": 1,
+      "support": 0.0375,
+      "count": 1809
+    },
+    {
+      "items": [
+        "[BIO] Organic Large Extra Fancy Fuji Apple"
+      ],
+      "length": 1,
+      "support": 0.0371,
+      "count": 1789
+    },
+    {
+      "items": [
+        "Yellow Onions"
+      ],
+      "length": 1,
+      "support": 0.037,
+      "count": 1788
+    },
+    {
+      "items": [
+        "Carrots"
+      ],
+      "length": 1,
+      "support": 0.0369,
+      "count": 1781
+    },
+    {
+      "items": [
+        "[BIO] Organic Baby Carrots"
+      ],
+      "length": 1,
+      "support": 0.0364,
+      "count": 1757
+    },
+    {
+      "items": [
+        "[BIO] Organic Gala Apples"
+      ],
+      "length": 1,
+      "support": 0.0358,
+      "count": 1727
+    },
+    {
+      "items": [
+        "Fresh Cauliflower"
+      ],
+      "length": 1,
+      "support": 0.0354,
+      "count": 1708
+    }
+  ],
+  "top_rules": [
+    {
+      "antecedents": [
+        "[BIO] Organic Lemon"
+      ],
+      "consequents": [
+        "[BIO] Organic Hass Avocado"
+      ],
+      "support": 0.0114,
+      "confidence": 0.2549,
+      "lift": 2.4279
+    },
+    {
+      "antecedents": [
+        "[BIO] Organic Fuji Apple"
+      ],
+      "consequents": [
+        "Banana"
+      ],
+      "support": 0.0169,
+      "confidence": 0.3878,
+      "lift": 1.8105
+    },
+    {
+      "antecedents": [
+        "[BIO] Organic Large Extra Fancy Fuji Apple"
+      ],
+      "consequents": [
+        "[BIO] Bag of Organic Bananas"
+      ],
+      "support": 0.0119,
+      "confidence": 0.3203,
+      "lift": 1.7849
+    },
+    {
+      "antecedents": [
+        "[BIO] Organic Hass Avocado"
+      ],
+      "consequents": [
+        "[BIO] Bag of Organic Bananas"
+      ],
+      "support": 0.0332,
+      "confidence": 0.3162,
+      "lift": 1.7622
+    },
+    {
+      "antecedents": [
+        "[BIO] Organic Raspberries"
+      ],
+      "consequents": [
+        "[BIO] Bag of Organic Bananas"
+      ],
+      "support": 0.0212,
+      "confidence": 0.3148,
+      "lift": 1.7541
+    },
+    {
+      "antecedents": [
+        "Honeycrisp Apple"
+      ],
+      "consequents": [
+        "Banana"
+      ],
+      "support": 0.0147,
+      "confidence": 0.3703,
+      "lift": 1.7289
+    },
+    {
+      "antecedents": [
+        "[BIO] Apple Honeycrisp Organic"
+      ],
+      "consequents": [
+        "[BIO] Bag of Organic Bananas"
+      ],
+      "support": 0.0117,
+      "confidence": 0.2815,
+      "lift": 1.5689
+    },
+    {
+      "antecedents": [
+        "[BIO] Organic Gala Apples"
+      ],
+      "consequents": [
+        "[BIO] Bag of Organic Bananas"
+      ],
+      "support": 0.01,
+      "confidence": 0.2803,
+      "lift": 1.5618
+    },
+    {
+      "antecedents": [
+        "Cucumber Kirby"
+      ],
+      "consequents": [
+        "Banana"
+      ],
+      "support": 0.0161,
+      "confidence": 0.3332,
+      "lift": 1.5556
+    },
+    {
+      "antecedents": [
+        "[BIO] Organic Cucumber"
+      ],
+      "consequents": [
+        "[BIO] Bag of Organic Bananas"
+      ],
+      "support": 0.011,
+      "confidence": 0.271,
+      "lift": 1.5101
+    },
+    {
+      "antecedents": [
+        "Seedless Red Grapes"
+      ],
+      "consequents": [
+        "Banana"
+      ],
+      "support": 0.0129,
+      "confidence": 0.3229,
+      "lift": 1.5077
+    },
+    {
+      "antecedents": [
+        "Strawberries"
+      ],
+      "consequents": [
+        "Banana"
+      ],
+      "support": 0.021,
+      "confidence": 0.3149,
+      "lift": 1.4701
+    },
+    {
+      "antecedents": [
+        "[BIO] Organic Lemon"
+      ],
+      "consequents": [
+        "[BIO] Bag of Organic Bananas"
+      ],
+      "support": 0.0116,
+      "confidence": 0.2595,
+      "lift": 1.4461
+    },
+    {
+      "antecedents": [
+        "Yellow Onions"
+      ],
+      "consequents": [
+        "Banana"
+      ],
+      "support": 0.0111,
+      "confidence": 0.2992,
+      "lift": 1.3969
+    },
+    {
+      "antecedents": [
+        "[BIO] Organic Avocado"
+      ],
+      "consequents": [
+        "Banana"
+      ],
+      "support": 0.0254,
+      "confidence": 0.2927,
+      "lift": 1.3667
+    },
+    {
+      "antecedents": [
+        "Large Lemon"
+      ],
+      "consequents": [
+        "Banana"
+      ],
+      "support": 0.02,
+      "confidence": 0.2689,
+      "lift": 1.2553
+    }
+  ],
+  "top_bio_rules": [
+    {
+      "antecedents": [
+        "[BIO] Organic Lemon"
+      ],
+      "consequents": [
+        "[BIO] Organic Hass Avocado"
+      ],
+      "support": 0.0114,
+      "confidence": 0.2549,
+      "lift": 2.4279
+    },
+    {
+      "antecedents": [
+        "[BIO] Organic Fuji Apple"
+      ],
+      "consequents": [
+        "Banana"
+      ],
+      "support": 0.0169,
+      "confidence": 0.3878,
+      "lift": 1.8105
+    },
+    {
+      "antecedents": [
+        "[BIO] Organic Large Extra Fancy Fuji Apple"
+      ],
+      "consequents": [
+        "[BIO] Bag of Organic Bananas"
+      ],
+      "support": 0.0119,
+      "confidence": 0.3203,
+      "lift": 1.7849
+    },
+    {
+      "antecedents": [
+        "[BIO] Organic Hass Avocado"
+      ],
+      "consequents": [
+        "[BIO] Bag of Organic Bananas"
+      ],
+      "support": 0.0332,
+      "confidence": 0.3162,
+      "lift": 1.7622
+    },
+    {
+      "antecedents": [
+        "[BIO] Organic Raspberries"
+      ],
+      "consequents": [
+        "[BIO] Bag of Organic Bananas"
+      ],
+      "support": 0.0212,
+      "confidence": 0.3148,
+      "lift": 1.7541
+    },
+    {
+      "antecedents": [
+        "[BIO] Apple Honeycrisp Organic"
+      ],
+      "consequents": [
+        "[BIO] Bag of Organic Bananas"
+      ],
+      "support": 0.0117,
+      "confidence": 0.2815,
+      "lift": 1.5689
+    },
+    {
+      "antecedents": [
+        "[BIO] Organic Gala Apples"
+      ],
+      "consequents": [
+        "[BIO] Bag of Organic Bananas"
+      ],
+      "support": 0.01,
+      "confidence": 0.2803,
+      "lift": 1.5618
+    },
+    {
+      "antecedents": [
+        "[BIO] Organic Cucumber"
+      ],
+      "consequents": [
+        "[BIO] Bag of Organic Bananas"
+      ],
+      "support": 0.011,
+      "confidence": 0.271,
+      "lift": 1.5101
+    },
+    {
+      "antecedents": [
+        "[BIO] Organic Lemon"
+      ],
+      "consequents": [
+        "[BIO] Bag of Organic Bananas"
+      ],
+      "support": 0.0116,
+      "confidence": 0.2595,
+      "lift": 1.4461
+    },
+    {
+      "antecedents": [
+        "[BIO] Organic Avocado"
+      ],
+      "consequents": [
+        "Banana"
+      ],
+      "support": 0.0254,
+      "confidence": 0.2927,
+      "lift": 1.3667
+    }
+  ]
+}
