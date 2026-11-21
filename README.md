@@ -267,6 +267,29 @@ Le dossier local `./data` est monté dans `/app/data` dans les conteneurs. Les d
 
 ---
 
+## Collecte J1
+
+Lancer la collecte complète depuis la racine du projet :
+
+```bash
+make collect
+```
+
+La commande exécute les collectes Instacart, Open Food Facts, RappelConso et scraping européen. Les données brutes sont écrites dans `data/raw/` et les métadonnées dans `data/raw/collection_metadata.json`.
+
+Documentation associée :
+
+- `docs/collecte.md` : sources, conformité RGPD, robots.txt, retries et licences.
+- `docs/dictionnaire_donnees.md` : description des fichiers et colonnes principales.
+
+### Limites connues
+
+- Instacart dépend des identifiants Kaggle disponibles localement ou via les variables `KAGGLE_USERNAME` et `KAGGLE_KEY`.
+- Open Food Facts peut nécessiter plusieurs minutes selon la taille du téléchargement.
+- Les fichiers bruts sont volumineux et volontairement exclus de Git : ils restent disponibles dans `data/raw/`.
+
+---
+
 ## Équipe
 
 Projet réalisé dans le cadre de la MSPR Data Mining.

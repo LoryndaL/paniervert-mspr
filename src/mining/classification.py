@@ -18,6 +18,7 @@ from sklearn.metrics import (
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder, StandardScaler
+from xgboost import XGBClassifier
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
@@ -156,6 +157,17 @@ def main(target_col: str = "segment") -> Path | None:
         "random_forest": RandomForestClassifier(
             n_estimators=150,
             max_depth=12,
+            n_jobs=-1,
+            random_state=42,
+        ),
+        "xgboost": XGBClassifier(
+            n_estimators=150,
+            max_depth=6,
+            learning_rate=0.1,
+            subsample=0.9,
+            colsample_bytree=0.9,
+            objective="multi:softprob" if len(class_counts) > 2 else "binary:logistic",
+            eval_metric="mlogloss" if len(class_counts) > 2 else "logloss",
             n_jobs=-1,
             random_state=42,
         ),

@@ -225,3 +225,11 @@ __marimo__/
 !/data/raw/.gitkeep
 /data/processed/*
 !/data/processed/.gitkeep
+
+# Credentials
+kaggle.json
+src/ingestion/kaggle.json
+.env
+
+# Local MLflow runs and model artifacts
+/mlruns/

@@ -1,7 +1,11 @@
 from pathlib import Path
 import time
 import duckdb
-import requests
+
+try:
+    from .http_utils import request_with_retry
+except ImportError:
+    from ingestion.http_utils import request_with_retry
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 OUTPUT_DIR = PROJECT_ROOT / "data" / "raw"
@@ -106,8 +110,8 @@ def download_and_filter_file():
     # 2. Téléchargement avec indicateur de pourcentage en direct
     print("\n📥 Téléchargement du dataset Open Food Facts...")
     start_time = time.time()
-    response = requests.get(URL, stream=True, timeout=600)
-    response.raise_for_status()
+
+    response = request_with_retry(URL, stream=True, timeout=600)
 
     total_size = int(response.headers.get("content-length", 0))
     downloaded = 0

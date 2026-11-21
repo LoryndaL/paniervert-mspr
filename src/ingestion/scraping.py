@@ -2,8 +2,12 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-import requests
 from bs4 import BeautifulSoup
+
+try:
+    from .http_utils import request_with_retry
+except ImportError:
+    from ingestion.http_utils import request_with_retry
 
 
 BASE_URL = "https://agriculture.ec.europa.eu/farming/organic-farming/organic-logo_fr"
@@ -17,7 +21,7 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; ProjetDataScraping/1.0; +http
 
 
 def check_robots_txt():
-    robots_response = requests.get(ROBOTS_URL, headers=HEADERS, timeout=30)
+    robots_response = request_with_retry(ROBOTS_URL, headers=HEADERS, timeout=30)
     robots_response.raise_for_status()
     robots_text = robots_response.text
     robot_lines = [line.strip() for line in robots_text.splitlines() if line.strip() and not line.startswith('#')]
@@ -42,7 +46,7 @@ def check_robots_txt():
 
 
 def fetch_page(url: str):
-    response = requests.get(url, headers=HEADERS, timeout=30)
+    response = request_with_retry(url, headers=HEADERS, timeout=30)
     response.raise_for_status()
     return response.text
 

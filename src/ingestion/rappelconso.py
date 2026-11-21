@@ -1,6 +1,9 @@
 from pathlib import Path
 
-import requests
+try:
+    from .http_utils import request_with_retry
+except ImportError:
+    from ingestion.http_utils import request_with_retry
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
@@ -20,10 +23,10 @@ def download_dataset():
 
     print("Téléchargement du dataset RappelConso...")
 
-    response = requests.get(
+    response = request_with_retry(
         URL,
         stream=True,
-        timeout=600
+        timeout=600,
     )
 
     response.raise_for_status()
