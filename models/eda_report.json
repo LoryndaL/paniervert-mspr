@@ -1,0 +1,37 @@
+{
+  "source_file": "data/processed/gold/user_features.parquet",
+  "rows": 206209,
+  "columns": [
+    "user_id",
+    "total_orders",
+    "avg_basket_size",
+    "days_since_prior_order_mean",
+    "reorder_rate",
+    "organic_ratio"
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "hypothesis": "Les clients à proportion bio élevée ont un panier moyen plus élevé.",
+      "metric": "avg_basket_size",
+      "low_group_mean": 9.034,
+      "high_group_mean": 10.869,
+      "status": "confirmed"
+    },
+    {
+      "id": "H2",
+      "hypothesis": "Les clients fréquents ont un taux de réachat supérieur.",
+      "metric": "reorder_rate",
+      "low_group_mean": 0.2887,
+      "high_group_mean": 0.556,
+      "status": "confirmed"
+    },
+    {
+      "id": "H3",
+      "hypothesis": "La fréquence d’achat et la taille du panier sont liées.",
+      "metric": "correlation(total_orders, avg_basket_size)",
+      "value": 0.0219,
+      "status": "not_confirmed"
+    }
+  ]
+}
